@@ -9,7 +9,7 @@ function App() {
   const handleSubmit = async () => {
     setLoading(true);
     const completedCourses = courses.split(",").map(c => c.trim()).filter(Boolean);
-    const res = await fetch("http://localhost:8080/api/planner/recommend", {
+    const res = await fetch("https://courseplanner-g78d.onrender.com/api/planner/recommend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ completedCourses, standing: Number(standing) }),
